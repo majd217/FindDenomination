@@ -1,0 +1,57 @@
+
+input{
+    margin-top: 10px;
+    width: 150px;
+    color: rgb(41, 41, 255);
+    border-color: rgb(41, 41, 255);
+    border-radius: 2px;
+    padding: 10px;
+}
+
+::placeholder{
+    color: rgb(41, 41, 255);
+}
+
+button{
+    margin-top: 20px;
+    padding: 10px;
+    width: 150px;
+    background-color: rgb(41, 41, 255);
+    color: white;
+    border-radius: 10px;
+    border-color: white;
+}
+.main-flex-container{
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+}
+
+.flex-container-vertical{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+ }
+
+.flex-container-horizontal{
+    margin-left: 50px;
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+ }
+.caption-tag{
+    color: rgb(41, 41, 255);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+:host ::ng-deep #mat-mdc-slide-toggle-1-label{
+    color: rgb(41, 41, 255);
+}
+
+h1 {
+    color: rgb(41, 41, 255);
+}

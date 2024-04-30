@@ -1,0 +1,56 @@
+
+<div class="main-flex-container">
+
+  <div class="flex-container-vertical">
+    
+    <input matInput [(ngModel)]="Amount" type="number" placeholder="Enter Amount">
+
+    <button (click)="calculateDenomination()">
+      Calculate Denomination
+    </button>
+
+    <button *ngIf="amountsEntered > 1" (click)="calculateDifference()">
+      Calculate Difference
+    </button>
+    
+    <p>
+       <mat-slide-toggle labelPosition="before" (toggleChange)="changelayer()"> Change execution layer!</mat-slide-toggle>
+    </p>
+
+    <div>
+      <h1 *ngIf="executionLayer == false">
+          Backend
+      </h1>
+      
+      <h1 *ngIf="executionLayer == true">
+      Frontend
+      </h1>
+
+    </div>
+
+  </div>
+  
+    <div *ngIf="amountsEntered != 0" class="flex-container-horizontal">
+
+      <div class="flex-container-vertical">
+        <p class="caption-tag">New Amount Denomination</p>
+        <denomination-table [denominations]="newAmountDenomination"></denomination-table>
+      </div>
+      
+      <div style="width: 50px;"></div>
+    
+      <div *ngIf="amountsEntered > 1" class="flex-container-vertical">
+        <p class="caption-tag">Old Amount Denomination</p>
+        <denomination-table [denominations]="oldAmountDenomination"></denomination-table>
+      </div>
+
+      <div style="width: 50px;"></div>
+
+      <div *ngIf="differenceTableVisible"class="flex-container-vertical">
+        <p class="caption-tag">Difference Denomination</p>
+        <denomination-table [denominations]="differenceDenomination" [columnName]="'Difference'"></denomination-table>
+      </div>
+
+    </div>
+
+</div>
